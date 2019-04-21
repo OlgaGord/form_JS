@@ -19,10 +19,10 @@ function verifier() {
   var osexe = document.getElementById("sexe");
   var osexe2 = document.getElementById("sexe2");
   var oPseudonyme = document.getElementById("pseudonyme");
-  // var regexPseudonyme = /^[A-Za-z]{5}+$/; ;
   var oPost = document.getElementById("poste");
   var oAge = document.getElementById("age");
-  // var regexAge = /^[1-1][8-9]( ?)[0-9][0-9]$/i;
+  //   .getAttribute("value")
+  var regexAge = /^(1[89]|[2-9][0-9])$/;
   var oQualite = document.getElementById("qualite");
   var oEmploi = document.getElementById("emploi");
   var oFormation = document.getElementById("formation");
@@ -50,13 +50,18 @@ function verifier() {
     oPost.classList.remove("fondRouge");
   }
   //verifier le champ age
-
+  if (regexAge.test(oAge.value)) {
+    console.log("Your age is correct");
+  } else {
+    alert("Your age is out of range");
+  }
   if (oAge.value == "") {
     msg_erreur += "champ age est  vide \n";
     oAge.classList.add("fondRouge");
   } else {
     oAge.classList.remove("fondRouge");
   }
+
   //verifier le champ qualite
   if (oQualite.value == "") {
     msg_erreur = msg_erreur + "champ qualite est vide \n";
