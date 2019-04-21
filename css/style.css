@@ -1,0 +1,15 @@
+#courriel {
+  width: 350px;
+  float: left;
+}
+#formulaire {
+  width: 350px;
+  float: left;
+}
+fieldset {
+  width: 300px;
+}
+
+.fondRouge {
+  background-color: #ff0000;
+}
